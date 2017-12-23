@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Connection Manager Playground</h1>
+    <p>This interface provides a simple way to play around with the connection manager.<br>
+        In order to see the requests, simply open the network tab in your developer tools (chrome works best), you also can throttle the connection using these tools (at least in chrome).</p>
+    
+    <h3>(Simple) Authentication State</h3>
+    <div>
+    logged in: <span id=loginstatus>Loading…</span><br />
+    expire time: <span id=loginexpire>Loading…</span>s<br />
+    renewal status: <span id=loginrenewal>Loading…</span><br />
+    </div>
+    
+    <h3>Add random Requests</h3>
+    <div>
+    interval: <input type=number id=randomintmin value=0 step=100 style="width:4em" /> - 
+    <input type=number id=randomintmax value=0 step=100 style="width:4em" /><br />
+    min prio: <input type=number id=randommin value=1 min=1 max=4 style="width:3em" /><br />
+    max prio: <input type=number id=randommax value=1 min=1 max=4 style="width:3em" /><br />
+    keep queue short? <input type=checkbox id=maxlength value=1 checked /><br />
+    increase prio? <input type=checkbox id=increaseprio value=1 checked /><br />
+    <button id=randomstart>start</button>&nbsp;<button id=randomstop>stop</button><br />
+    </div>
+    
+    <h3>Play/Pause Connection Manager</h3>
+    <div>
+    <button id=looppause>pause</button>&nbsp;<button id=loopresume>resume</button>
+    </div>
+
+    <h3>Manually create Request</h3>
+    <div>
+    file: <select id=initfile>
+        <option value=1>10kb</option>
+        <option value=2>20kb</option>
+        <option value=3>50kb</option>
+        <option value=4>100kb</option>
+        <option value=5>200kb</option>
+        <option value=6>500kb</option>
+        <option value=7>1000kb</option>
+    </select><br />
+    prio: <input type=number id=initprio value=4 min=1 max=4 style="width:3em" /><br />
+    open? <input type=checkbox id=initopen value=1 /><br />
+    add? <input type=checkbox id=initadd value=1 /><br />
+    cancel, if not started? <input type=checkbox id=initcancel value=1 /><br />
+    cancel after: <input type=number id=initcancelafter value=60000 style="width:5em" /><br />
+    <button id=initcreate>create</button><br />
+    waiting/ttfb/complete: <span id=initwaiting></span>s / <span id=initfirstdata></span>s / <span id=initcomplete></span>s
+    </div>
+    
+    <h3>Reschedule last waiting connection</h3>
+    <div>
+    <span id="lastwaiting"></span><br />
+    prio: <input type=number id=waitingresprio value=4 min=1 max=4 style="width:3em" /><br />
+    <button id=waitingres>reschedule</button><br />
+    </div>
+
+    <h3>Open Connections (<span id=cmopen>Loading…</span>)</h3>
+    <div><p id=openlist>Loading…</p></div>
+
+    <h3>Waiting Connection (<span id=cmwaiting>Loading…</span>)</h3>
+    <div><p id=waitinglist>Loading…</p></div>
+
+    <script src="dist/bundle.js"></script>
+</body>
+</html>

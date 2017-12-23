@@ -1,0 +1,21 @@
+{
+  "name": "thesis",
+  "version": "1.0.0",
+  "description": "",
+  "main": "./dist/app.js",
+  "module": "./src/app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "bundle": "webpack ./src/app.js ./dist/bundle.js --watch"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "webpack": "^3.10.0"
+  },
+  "dependencies": {
+    "@dcos/connection-manager": "^0.2.1",
+    "immutable": "^3.8.2"
+  }
+}

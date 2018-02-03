@@ -6,16 +6,17 @@
   "module": "./src/app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "bundle": "webpack ./src/app.js ./dist/bundle.js --watch"
+    "bundle": "webpack ./src/app.js ./html/dist/bundle.js"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "webpack": "^3.10.0"
+    "react": "16.2.0",
+    "webpack": "3.10.0"
   },
   "dependencies": {
-    "@dcos/connection-manager": "^0.2.1",
-    "immutable": "^3.8.2"
+    "@dcos/connection-manager": "juliangieseke/connection-manager",
+    "immutable": "3.8.2"
   }
 }

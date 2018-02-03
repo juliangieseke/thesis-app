@@ -7,31 +7,28 @@
     <title>Document</title>
 </head>
 <body>
+    <div id=prototype></div>
+
     <h1>Connection Manager Playground</h1>
     <p>This interface provides a simple way to play around with the connection manager.<br>
         In order to see the requests, simply open the network tab in your developer tools (chrome works best), you also can throttle the connection using these tools (at least in chrome).</p>
     
     <h3>(Simple) Authentication State</h3>
     <div>
-    logged in: <span id=loginstatus>Loading…</span><br />
-    expire time: <span id=loginexpire>Loading…</span>s<br />
-    renewal status: <span id=loginrenewal>Loading…</span><br />
+    <p>Please open the Console to observe the Authentication State</p>
+    (Stubbed) Token lifetime: <input type=number id=tokenlifetime value=60000 step=1000 style="width:4em" />ms<br />
+    <button id=login>Login</button>
     </div>
     
-    <h3>Add random Requests</h3>
+    <h3>Add random Requests (Noise)</h3>
     <div>
-    interval: <input type=number id=randomintmin value=0 step=100 style="width:4em" /> - 
-    <input type=number id=randomintmax value=0 step=100 style="width:4em" /><br />
+    interval: <input type=number id=randomintmin value=1000 step=100 style="width:4em" /> - 
+    <input type=number id=randomintmax value=1000 step=100 style="width:4em" /><br />
     min prio: <input type=number id=randommin value=1 min=1 max=4 style="width:3em" /><br />
-    max prio: <input type=number id=randommax value=1 min=1 max=4 style="width:3em" /><br />
-    keep queue short? <input type=checkbox id=maxlength value=1 checked /><br />
-    increase prio? <input type=checkbox id=increaseprio value=1 checked /><br />
+    max prio: <input type=number id=randommax value=3 min=1 max=4 style="width:3em" /><br />
+    keep queue short? <input type=checkbox id=maxlength value=1  /><br />
+    increase prio? <input type=checkbox id=increaseprio value=1  /><br />
     <button id=randomstart>start</button>&nbsp;<button id=randomstop>stop</button><br />
-    </div>
-    
-    <h3>Play/Pause Connection Manager</h3>
-    <div>
-    <button id=looppause>pause</button>&nbsp;<button id=loopresume>resume</button>
     </div>
 
     <h3>Manually create Request</h3>
@@ -67,6 +64,6 @@
     <h3>Waiting Connection (<span id=cmwaiting>Loading…</span>)</h3>
     <div><p id=waitinglist>Loading…</p></div>
 
-    <script src="dist/bundle.js"></script>
+    <script src="./dist/bundle.js"></script>
 </body>
 </html>

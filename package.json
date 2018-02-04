@@ -16,7 +16,7 @@
     "webpack": "3.10.0"
   },
   "dependencies": {
-    "@dcos/connection-manager": "juliangieseke/connection-manager",
+    "@dcos/connection-manager": "juliangieseke/connection-manager#thesis",
     "immutable": "3.8.2"
   }
 }
